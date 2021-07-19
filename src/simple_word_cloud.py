@@ -54,7 +54,7 @@ class SimpleWordCloud:
 
 
 if __name__ == "__main__":
-    x = WordCloud(sys.argv[1])
+    x = SimpleWordCloud(sys.argv[1])
     x.read()
     x.generate()
-    x.show()
+    x.save('output.png')
