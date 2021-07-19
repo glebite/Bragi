@@ -27,7 +27,7 @@ class SimpleWordCloud:
 
         :param:  n/a
         :return: n/a
-        :throws: Exception
+        :throws: MissingFileError
         """
         try:
             self.textContents = str(textract.process(self.fileName))
