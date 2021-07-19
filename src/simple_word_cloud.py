@@ -52,7 +52,6 @@ class SimpleWordCloud:
         plt.axis('off')
         plt.show()
 
-
     def save(self, fileName):
         """save
 
