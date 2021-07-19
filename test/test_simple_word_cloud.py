@@ -1,7 +1,6 @@
-import pytest
-import simple_word_cloud
+from src.simple_word_cloud import SimpleWordCloud
 
 
-@pytest.mark
 def test_creation():
-    x = SimpleWorldCloud('')
+    x = SimpleWordCloud('')
+    assert x is not None
