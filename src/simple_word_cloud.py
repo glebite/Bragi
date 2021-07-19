@@ -35,6 +35,12 @@ class SimpleWordCloud:
             raise e
 
     def generate(self):
+        """generate - actually creates the word cloud
+
+        :param:  n/a
+        :return: n/a
+        :throws: n/a
+        """
         temp = WordCloud(relative_scaling=1.0,
                          stopwords=set(STOPWORDS))
         self.wordCloud = temp.generate(self.textContents)
@@ -48,7 +54,11 @@ class SimpleWordCloud:
 
 
     def save(self, fileName):
-        """
+        """save
+
+        :param:  fileName - name of the file to write to
+        :return: n/a
+        :throws: n/a
         """
         self.wordCloud.to_file(fileName)
 
