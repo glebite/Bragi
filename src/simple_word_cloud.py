@@ -20,7 +20,7 @@ class SimpleWordCloud:
         """
         self.fileName = fileName
         self.textContents = None
-        self.wordCloud = ""
+        self.wordCloud = ''
 
     def read(self):
         """read - reads the file in
@@ -31,7 +31,7 @@ class SimpleWordCloud:
         """
         try:
             self.textContents = str(textract.process(self.fileName))
-        except Exception as e:
+        except textract.exceptions.MissingFileError as e:
             raise e
 
     def generate(self):
