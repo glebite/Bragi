@@ -22,3 +22,16 @@ def test_read_good_file():
         assert True
     except textract.exceptions.MissingFileError:
         assert False
+
+
+def test_read_good_check_text():
+    x = SimpleWordCloud('./data/rfc3261.txt.pdf')
+    x.read()
+    assert '(SIP)' in x.textContents
+
+
+def test_read_bad_check_text():
+    x = SimpleWordCloud('./data/rfc3261.txt.pdf')
+    x.read()
+    assert '(XYZZY)' not in x.textContents
+
