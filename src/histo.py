@@ -16,7 +16,9 @@ def main(arguments):
 
 if __name__ == "__main__":
     textContents = re.findall(r'\w+',
-                              str(textract.process('../data/rfc3261.txt.pdf')))
+                              textract.process('../data/rfc3261.txt.pdf',
+                                                   method='pdfminer').decode("utf8"))
+    print(type(textContents))
     stop_words = set(stopwords.words('english'))
 
     c = Counter()
