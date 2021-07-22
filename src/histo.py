@@ -18,5 +18,12 @@ if __name__ == "__main__":
     textContents = re.findall(r'\w+',
                               str(textract.process('../data/rfc3261.txt.pdf')))
     stop_words = set(stopwords.words('english'))
-    word_tokens = [word_tokenize(sent) for sent in textContents]
-    print(Counter(textContents).most_common(10))
+
+    c = Counter()
+    for word in textContents:
+        if not word.lower() in stop_words:
+            if word.isnumeric():
+                continue
+            if len(word) > 1:
+                c[word.strip()] += 1
+    print(c.most_common(25))
