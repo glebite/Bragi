@@ -3,7 +3,8 @@
 """
 import textract
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import TreebankWordTokenizer
+
 import re
 import copy
 # import sys
@@ -15,18 +16,9 @@ def main(arguments):
 
 if __name__ == "__main__":
     textContents = textract.process('../data/rfc3261.txt.pdf',
-                         method='pdfminer').decode("utf8")
-    stop_words = set(stopwords.words('english'))
-
-    print(textContents)
-    
-    # words = word_tokenize(textContents)
-
-    # for pos, word in enumerate(words):
-    #     # print(word)
-    #     # print(f'Pos: {pos} word: {word}')
-    #     if '(' in word:
-    #         print(f'\tBird: {word} {words[pos+1]} {words[pos+2]}')
-    #     # if '(' in word:
-    #     #     print(word)
-    #     #     # print(f'\t{pos} >>{x[0][pos-1]}<<')
+                         method='pdfminer').decode("utf8").split(" ")
+    reducedContents = [word for word in textContents if len(word)]
+    for pos, word in enumerate(reducedContents):
+        if re.search(r'\([A-Z]*\)', word):
+            wordLength = len(word)-3
+            print(f'ACRONYM: {word} Definition: {reducedContents[pos-wordLength:pos]}')
