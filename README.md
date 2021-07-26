@@ -17,4 +17,10 @@ and possibly paragraph by paragraph sentiment analysis.
 5. look into highlighting  
 6. auto linking/backlinks  
 
-### prototype word cloud__
+### prototype word cloud  
+Word clouds are handy for giving the user a visual snapshot of what could be 
+interesting.  The colours, sizes of the text and even the orientation can 
+be quite lovely and help reinforce concepts.
+
+### prototype acronym work  
+
