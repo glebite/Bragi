@@ -23,4 +23,11 @@ interesting.  The colours, sizes of the text and even the orientation can
 be quite lovely and help reinforce concepts.
 
 ### prototype acronym work  
+Find ([A-Z]*) patterns and then try to map them back len(pattern) back with 
+upper case characters.  For example: This is the Session Initiation Protocol
+(SIP).  What it should map to:  
+
+SIP - Session Initiation Protocol  
+
+
 
