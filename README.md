@@ -29,5 +29,6 @@ upper case characters.  For example: This is the Session Initiation Protocol
 
 SIP - Session Initiation Protocol  
 
-
+### prototype html generation  
+Generate a text to html output - that should be straight-forward.
 
