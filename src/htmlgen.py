@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
 """
+from functools import wraps
 
 
 class HtmlGen(object):
@@ -11,6 +12,12 @@ class HtmlGen(object):
         """
         pass
 
+    def paragraph(self, func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            return f'<b>{func(*args, **kwargs)}</b>'
+        return wrapper
+    
     def p_tagify(self, text):
         """p_tagify - wrap with p
         """
@@ -21,6 +28,10 @@ class HtmlGen(object):
         """
         return f'<body>{text}</body>'
 
+    @paragraph
+    def output(self, text):
+        return text
 
 if __name__ == "__main__":
-    pass
+    x = HtmlGen()
+    x.output("whatever")
