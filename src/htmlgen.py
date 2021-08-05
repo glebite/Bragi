@@ -12,12 +12,11 @@ class HtmlGen(object):
         """
         pass
 
-    def paragraph(self, func):
-        @wraps(func)
+    def paragraph(func):
         def wrapper(*args, **kwargs):
             return f'<b>{func(*args, **kwargs)}</b>'
         return wrapper
-    
+
     def p_tagify(self, text):
         """p_tagify - wrap with p
         """
@@ -34,4 +33,4 @@ class HtmlGen(object):
 
 if __name__ == "__main__":
     x = HtmlGen()
-    x.output("whatever")
+    print(x.output("whatever"))
