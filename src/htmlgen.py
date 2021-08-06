@@ -5,7 +5,7 @@ from functools import wraps
 
 
 class HtmlGen(object):
-    """
+    """HtmlGen - this is where the magic happens, baby.
     """
     def __init__(self):
         """
@@ -14,7 +14,7 @@ class HtmlGen(object):
 
     def paragraph(func):
         def wrapper(*args, **kwargs):
-            return f'<b>{func(*args, **kwargs)}</b>'
+            return f'<p>{func(*args, **kwargs)}</p>'
         return wrapper
 
     def p_tagify(self, text):
@@ -30,6 +30,7 @@ class HtmlGen(object):
     @paragraph
     def output(self, text):
         return text
+
 
 if __name__ == "__main__":
     x = HtmlGen()
