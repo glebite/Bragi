@@ -22,6 +22,11 @@ class HtmlGen(object):
         """
         return f'<p>{text}</p>'
 
+    def body(func):
+        def wrapper(*args, **kwargs):
+            return f'<body>{func(*args, **kwargs)}</body>'
+        return wrapper
+
     def body_tagify(self, text):
         """body_tagify - wrap with body
         """
