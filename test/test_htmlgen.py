@@ -11,7 +11,7 @@ def test_creation():
 
 def test_p_tagify():
     x = HtmlGen()
-    assert x.p_tagify("X") == "<p>X</p>"
+    assert x.output("X") == "<p>X</p>"
 
 
 def test_output():
