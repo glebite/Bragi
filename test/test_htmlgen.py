@@ -1,3 +1,6 @@
+"""
+test_htmlgen.py
+"""
 import pytest
 from htmlgen import HtmlGen
 
