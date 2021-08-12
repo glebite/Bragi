@@ -26,7 +26,10 @@ class HtmlGen(object):
     def output(self, text):
         return text
 
-
+    @body
+    def otheroutput(self, text):
+        return text
+    
 if __name__ == "__main__":
     x = HtmlGen()
     print(x.output("whatever"))
