@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
+htmlgen.py - conversion from 
 """
-from functools import wraps
 
 
 class HtmlGen(object):
@@ -29,7 +29,8 @@ class HtmlGen(object):
     @body
     def otheroutput(self, text):
         return text
-    
+
+
 if __name__ == "__main__":
     x = HtmlGen()
     print(x.output("whatever"))
