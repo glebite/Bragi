@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-htmlgen.py - conversion from 
+htmlgen.py - conversion from PDF or such into html
 """
 
 
