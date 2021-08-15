@@ -7,10 +7,10 @@ htmlgen.py - conversion from PDF or such into html
 class HtmlGen(object):
     """HtmlGen - this is where the magic happens, baby.
     """
-    def __init__(self):
+    def __init__(self, fileName=None):
+        """init
         """
-        """
-        pass
+        self.fileName = fileName
 
     def paragraph(func):
         def wrapper(*args, **kwargs):
